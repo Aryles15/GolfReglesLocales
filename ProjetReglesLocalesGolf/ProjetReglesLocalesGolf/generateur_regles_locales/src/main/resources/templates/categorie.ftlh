@@ -18,6 +18,7 @@
             <#list categorie.getSousCategories() as souscat>
                 <li  class="list-group-item">
                     <h3>${souscat.title}</h3>
+                    <a href="/changesouscateg/${souscat.id}">Changer titre  Sous-rubriques</a>
                     <a href="/souscategoriedelete/${souscat.id}">Suprimer la Sous Categorie </a>
                     <a href="/newnextregle/${souscat.id}">Nouvelle Regles</a>
 
@@ -40,7 +41,7 @@
                             <!--bouton a la fin en dehors de la list -->
 
                             <!-- 3eme SOLUTION LIST DE REGLES COMPRIS DANS UN FORMULAIRE, BOUTON SUBMIT EN DEHOR DE LA LIST -->
-
+                            <a href="/changeregle/${regles.id}">Editer la Regle</a>
                             <a href="/regledelete/${regles.id}">Suprimer la Regle </a>
                         </li>
                     </ul>
