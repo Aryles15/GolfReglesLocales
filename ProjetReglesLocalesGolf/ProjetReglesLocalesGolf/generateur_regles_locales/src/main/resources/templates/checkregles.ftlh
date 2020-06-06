@@ -1,12 +1,26 @@
 <#import "main.ftlh" as m>
 
-<@m.page title="Liste des Rubriques">
-    <style>body{text-align: center;}</style>
+<@m.page title="Liste des Regles séléctionné">
+    <style>body {}</style>
 
-    <h1>Liste des regles choisis</h1>
+    <button class="btn-copy btn btn-danger" id="copy" type="button">Copier les Regles Locales  dans le presse-papier</button>
+    <div class="presse-papier">
+        <#list listeregles as regle>
+            <li>
+                ${regle.getCorpus()}
+            </li>
+        </#list>
+    </div>
 
-    <#list regle as regles>
-        <h1>${regle.title}</h1>
-    </#list>
+    <script>
+        var toCopy = document.querySelector('.presse-papier').innerText,
+            btnCopy = document.getElementById('copy');
 
+        btnCopy.addEventListener('click', function () {
+            navigator.clipboard.writeText(toCopy);
+            document.execCommand('copy');
+            return false;
+        });
+
+    </script>
 </@m.page>

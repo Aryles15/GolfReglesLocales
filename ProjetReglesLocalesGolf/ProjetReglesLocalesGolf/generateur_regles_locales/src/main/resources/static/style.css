@@ -1,5 +1,8 @@
 body{
-    background-color: floralwhite ;color:black;
+    background-color: ghostwhite ;color:black;
+}
+
+.allbody-exeptedNavBar{
     margin-left:10%;
     margin-right:10%;
 }

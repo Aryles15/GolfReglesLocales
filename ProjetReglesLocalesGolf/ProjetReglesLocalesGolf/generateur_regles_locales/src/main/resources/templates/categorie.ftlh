@@ -6,7 +6,7 @@
         New Categorie ?
         Titre <input type="text" name="NewNameTitle">
         Code <input type="text" name="NewNameCode">
-        <button type="submit">Ajouter</button>
+        <button class="btn btn-primary" type="submit">Ajouter</button>
     </form>
     <form action="/regleselect" method="post">
         <#list categories as categorie>
@@ -28,19 +28,13 @@
                 <#list souscat.getRegles() as regles >
                     <ul>
                         <li  class="list-group-item">
-
                             <h4>${regles.corpus}</h4>
 
-                            <!--PREMIERE SOLUTION FORMULAIRE A CHAQUE REGLES AVEC UN BUTTON SUBMIT-->
-                            <input type="checkbox"  id="idregles" name="idregles" value="${regles.id}">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="defaultUnchecked${regles.id}" name="idregles" value="${regles.id}">
+                                <label class="custom-control-label" for="defaultUnchecked${regles.id}"></label>
+                            </div>
 
-
-                            <!-- DEUXIEM SOLUTION HREF SELECTIONNABLE-->
-                            <!-- <a href="/regleselect/${regles.id}">Selectionner la regles</a>-->
-
-                            <!--bouton a la fin en dehors de la list -->
-
-                            <!-- 3eme SOLUTION LIST DE REGLES COMPRIS DANS UN FORMULAIRE, BOUTON SUBMIT EN DEHOR DE LA LIST -->
                             <a href="/changeregle/${regles.id}">Editer la Regle</a>
                             <a href="/regledelete/${regles.id}">Suprimer la Regle </a>
                         </li>
@@ -50,7 +44,7 @@
             </#list>
 
         </#list>
-        <button type="submit">Ajout à la liste</button>
+        <button class="btn btn-primary" type="submit">Ajout à la liste</button>
     </form>
     <h1>Liste des regles choisis</h1>
 </@m.page>

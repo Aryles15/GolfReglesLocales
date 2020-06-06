@@ -39,12 +39,9 @@ public class CategorieController {
         Categorie categ = categorieRepository.findById(id).get();
         categ.setTitle(name);
         categorieRepository.save(categ);
-        //model.addAttribute("categories", categorieRepository.findAll(categ));
-        //Ligne au dessus //Comme le setAtribute dans les jsp ,                                                                           cette ligne sert a renvoyer au template ce que lon recup
 
         model.addAttribute("categories", categ);
 
-        //return "golf";
         return "redirect:/categories";// on respect le prg ,
         // a chaque fois quon influe lapp ou bdd
         //on redirige jamais sur la meme page
@@ -79,12 +76,9 @@ public class CategorieController {
         SousCategorie souscateg = sousCategorieRepository.findById(id).get();
         souscateg.setTitle(name);
         sousCategorieRepository.save(souscateg);
-        //model.addAttribute("categories", categorieRepository.findAll(categ));
-        //Ligne au dessus //Comme le setAtribute dans les jsp ,                                                                           cette ligne sert a renvoyer au template ce que lon recup
 
         model.addAttribute("souscategories", souscateg);
 
-        //return "golf";
         return "redirect:/categories";// on respect le prg ,
         // a chaque fois quon influe lapp ou bdd
         //on redirige jamais sur la meme page
@@ -95,10 +89,8 @@ public class CategorieController {
     @RequestMapping(value = "/newsouscateg/{id}", method = RequestMethod.GET)
     public String nextNewCategories(Model model, @PathVariable("id") Long id) {
         Categorie categ = categorieRepository.findById(id).get();
-        //SousCategorie souscateg = sousCategorieRepository.findById(id).get();
 
         model.addAttribute("categorie", categ);
-        //model.addAttribute("souscategorie",souscateg);
 
         return "newsouscategorie";
     }
@@ -121,12 +113,8 @@ public class CategorieController {
     //////////////////////////////////////////Regle
     @RequestMapping(value = "/changeregle/{id}", method = RequestMethod.GET)
     public String modifyRegles(Model model, @PathVariable("id") Long id) {
-        //Categorie categ = categorieRepository.findById(id).get();
         Regle regle = regleRepository.findById(id).get();
-        //List<Regle> regle = regleRepository.findAllBySouscategorie(souscateg);
 
-        //model.addAttribute("regle",regle);
-        //model.addAttribute("categorie",categ);
         model.addAttribute("regle", regle);
 
         return "changeregle";
@@ -137,27 +125,20 @@ public class CategorieController {
         Regle regle = regleRepository.findById(id).get();
         regle.setCorpus(corpus);
         regleRepository.save(regle);
-        //model.addAttribute("categories", categorieRepository.findAll(categ));
-        //Ligne au dessus //Comme le setAtribute dans les jsp ,                                                                           cette ligne sert a renvoyer au template ce que lon recup
 
         model.addAttribute("regle", regle);
 
-        //return "golf";
         return "redirect:/categories";// on respect le prg ,
         // a chaque fois quon influe lapp ou bdd
         //on redirige jamais sur la meme page
 
 
     }
-    
+
     @RequestMapping(value = "/newnextregle/{id}", method = RequestMethod.GET)
     public String nextRegles(Model model, @PathVariable("id") Long id) {
-        //Categorie categ = categorieRepository.findById(id).get();
         SousCategorie souscateg = sousCategorieRepository.findById(id).get();
-        //List<Regle> regle = regleRepository.findAllBySouscategorie(souscateg);
 
-        //model.addAttribute("regle",regle);
-        //model.addAttribute("categorie",categ);
         model.addAttribute("souscategorie", souscateg);
 
         return "newregle";
@@ -183,7 +164,6 @@ public class CategorieController {
     @RequestMapping(value = "/categoriedelete/{id}", method = RequestMethod.GET)
     public String DeleteCategorie(Model model, @PathVariable("id") Long id) {
         Categorie categ = categorieRepository.findById(id).get();
-        //SousCategorie souscateg = sousCategorieRepository.findById(id).get();
         List<SousCategorie> souscatego = sousCategorieRepository.findAllByCategorie(categ);
 
         for (SousCategorie sous : souscatego) {
@@ -193,12 +173,6 @@ public class CategorieController {
             }
             sousCategorieRepository.delete(sous);
         }
-
-
-        //sousCategorieRepository.deleteById(id);
-        //regleRepository.delete(regle);
-        //sousCategorieRepository.deleteById(id);
-
 
         categorieRepository.deleteById(id);
 
@@ -228,23 +202,24 @@ public class CategorieController {
     }
 
     @RequestMapping(value = "/regleselect", method = RequestMethod.POST)
-    public String SelectRegle(Model model, @RequestParam("idregles") List<Long> idreg) {
-        List<Regle> Listregleselect = new ArrayList<>();
+    public String SelectRegle(Model model, @RequestParam("idregles") List<Long> listidregle) {
 
-        Regle regles = new Regle();
+        if (listidregle.size() > 0) {
+            List<Regle> Listregleselect = new ArrayList<>();
 
-        for (Long id : idreg) {
-            regles = regleRepository.findById(id).get();
-            Listregleselect.add(regles);
+            for (Long id : listidregle) {
+                Listregleselect.add(regleRepository.findById(id).get());
+            }
+            for (Regle regle : Listregleselect) {
+                System.out.println("===============================================" + regle.getCorpus());
+            }
+
+            model.addAttribute("listeregles", Listregleselect);
+            return "checkregles";
+        } else {
+            System.out.println("Pas d'id");
+            return "categorie";
         }
-
-
-        model.addAttribute("listeregles", Listregleselect);
-        model.addAttribute("regles", regles);
-
-        // System.out.println("liste de regle "+regles);
-
-        return "checkregles";
     }
 
 

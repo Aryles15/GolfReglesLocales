@@ -51,6 +51,4 @@ public class Categorie {
         this.title = title;
     }
 
-    //public List<SousCategorie> getSousCategories ()
-    //{}
 }
