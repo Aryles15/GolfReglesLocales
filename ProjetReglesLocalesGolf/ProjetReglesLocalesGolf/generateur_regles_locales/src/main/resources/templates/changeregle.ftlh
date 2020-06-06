@@ -1,7 +1,6 @@
 <#import "main.ftlh" as m>
 
 <@m.page title="Changez la regle">
-    <style>body{}</style>
 
     <h1>Changer le titre de la Sous Rubrique</h1>
 

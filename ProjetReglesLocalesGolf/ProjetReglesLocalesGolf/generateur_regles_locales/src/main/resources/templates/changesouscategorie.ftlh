@@ -1,8 +1,6 @@
 <#import "main.ftlh" as m>
 
 <@m.page title="Cahngez Titre de la Sous Categorie">
-    <style>body{background-color: black;color: aliceblue;text-align: center;}</style>
-
     <h1>Changer le titre de la Sous Rubrique</h1>
 
     <form style="margin-top: 20%;" action="/changesouscategorie/${souscategorie.id}" method="post" class="row">
