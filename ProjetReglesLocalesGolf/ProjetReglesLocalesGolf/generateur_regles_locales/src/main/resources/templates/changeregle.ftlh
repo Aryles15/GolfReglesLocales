@@ -6,7 +6,7 @@
 
     <form style="margin-top: 20%;" action="/changeregleformulaire/${regle.id}" method="post" class="row">
         Nouvelle Regle ?<input type="text" name="newregle">
-        <button type="submit">Ajout</button>
+        <button class="btn btn-primary" type="submit">Ajout</button>
     </form>
 
 </@m.page>

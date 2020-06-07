@@ -13,8 +13,7 @@ public class SousCategorie {
     private Integer numordre;
     private String title;
     private String objet;
-    private Date datemodif;
-    private Long ancienneversion;
+
     @ManyToOne
     private Categorie categorie;
     @OneToMany (mappedBy = "souscategorie")//voir correspondance clef etrangere clef primaire
@@ -58,12 +57,6 @@ public class SousCategorie {
         this.objet = objet;
     }
 
-    public Date getDatemodif() {
-        return datemodif;
-    }
-    public void setDatemodif(Date datemodif) {
-        this.datemodif = datemodif;
-    }
 
     public Categorie getCategorie() {
         return categorie;

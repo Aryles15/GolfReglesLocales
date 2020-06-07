@@ -44,7 +44,8 @@
             </#list>
 
         </#list>
-        <button class="btn btn-primary" type="submit">Ajout à la liste</button>
+        </br>
+        <button class="btn btn-warning" type="submit">Ajout à la liste</button>
     </form>
-    <h1>Liste des regles choisis</h1>
+
 </@m.page>

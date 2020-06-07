@@ -2,17 +2,17 @@ insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 1, 'A', 'Hors limites et
 insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 2, 'B', 'Zones à pénalité' );
 insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 3, 'C', 'Bunkers' );
 
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 1, 'Définir les limites',1, 1);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 2, 'Préciser les limites quand on utilise un mur ou une route',2, 1);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 3, 'Hors limites quand une route publique traverse le parcours',3, 1);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 4, 'Définir les limites',4,1);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 5, 'Piquets identifiant un hors limites',5,1);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 1, 'Définir les limites',1,'Limite definie Tset', 1);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 2, 'Préciser les limites quand on utilise un mur ou une route',2,'', 1);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 3, 'Hors limites quand une route publique traverse le parcours',3,'', 1);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 4, 'Définir les limites',4,'',1);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 5, 'Piquets identifiant un hors limites',5,'',1);
 
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 6, 'Définition des zones à pénalité',1,2);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 7, 'Dégagement sur le côté opposé d’une zone à pénalité rouge',2,2);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 8, 'Balle provisoire pour une balle dans une zone à pénalité',3,2);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 9, 'Définir un cours d’eau à l’air libre comme partie de la zone générale',4,2);
-insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, CATEGORIE_ID) VALUES ( 10, 'Dégagement spécifique quand une zone à pénalité est proche d’un bunker',5,2);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 6, 'Définition des zones à pénalité',1,'',2);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 7, 'Dégagement sur le côté opposé d’une zone à pénalité rouge',2,'',2);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 8, 'Balle provisoire pour une balle dans une zone à pénalité',3,'',2);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 9, 'Définir un cours d’eau à l’air libre comme partie de la zone générale',4,'',2);
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 10, 'Dégagement spécifique quand une zone à pénalité est proche d’un bunker',5,'',2);
 
 insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 1, 1, '',1,'Le hors limites est défini par la ligne entre les points au niveau du sol côté parcours des piquets blancs ou des poteaux de clôture. Le hors limites est aussi défini par [insérer la description d’autres méthodes pour définir un hors limites]' );
 insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 2, 2, '',1,'Les limites du [spécifier le numéro du trou] sont définies par [insérer la description de l’élément].' );
