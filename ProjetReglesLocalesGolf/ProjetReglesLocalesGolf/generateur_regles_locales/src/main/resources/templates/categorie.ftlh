@@ -18,7 +18,7 @@
                     </div>
                 </li>
 
-                <div id="${categorie.id}" style="display:none;">
+                <div id="${categorie.id}" class="divCateg" style="display:none;">
 
                     <a href="/changecateg/${categorie.id}">Changer titre rubriques</a>
                     <a href="/newsouscateg/${categorie.id}">Nouvelle Sous Rubrique</a>
@@ -31,7 +31,7 @@
                                 <input value="Afficher/Masquer" type="button" class="btn btn-success" onclick="AfficherMasquerCateg(1${souscat.id})"></input>
                             </div>
                         </li>
-                        <div id="1${souscat.id}" style="display:none;">
+                        <div id="1${souscat.id}" class="divSousCateg" style="display:none;">
 
                             <a href="/changesouscateg/${souscat.id}">Changer titre Sous-rubriques</a>
                             <a href="/souscategoriedelete/${souscat.id}">Suprimer la Sous Categorie </a>

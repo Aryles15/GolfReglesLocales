@@ -201,8 +201,9 @@ public class CategorieController {
         return "redirect:/categories";
     }
 
+
     @RequestMapping(value = "/regleselect", method = RequestMethod.POST)
-    public String SelectRegle(Model model, @RequestParam("idregles") List<Long> listidregle) {
+    public String SelectRegle(Model model, @RequestParam("idregles") List<Long> listidregle) {  //On recupere une Liste contenant les id des règles selectionné
 
         if (listidregle.size() > 0) {
             List<Regle> Listregleselect = new ArrayList<>();

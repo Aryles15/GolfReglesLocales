@@ -10,3 +10,39 @@ body{
 .ajoutcateg{
     text-align: center;
 }
+
+.divCateg {
+    animation-duration: 3s;
+    animation-name: slideleft;
+}
+
+.divSousCateg {
+    animation-duration: 3s;
+    animation-name: slidebas;
+}
+
+/*KeyFrames Animation*/
+@keyframes slideleft {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+
+    }
+}
+
+@keyframes slidebas {
+    from {
+        margin-top: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-top: 0%;
+        width: 100%;
+    }
+}
