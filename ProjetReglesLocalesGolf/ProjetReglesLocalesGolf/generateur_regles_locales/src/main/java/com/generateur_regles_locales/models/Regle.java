@@ -9,6 +9,7 @@ public class Regle {
     private Long id;
     private Integer numordre;
     private String title;
+    @Column(length = 20000)
     private String corpus;
     @ManyToOne
     private SousCategorie souscategorie;

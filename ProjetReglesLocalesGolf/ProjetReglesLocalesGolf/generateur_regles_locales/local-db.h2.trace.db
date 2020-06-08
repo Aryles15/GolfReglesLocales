@@ -5536,3 +5536,59 @@ insert into regle (id, corpus, numordre, souscategorie_id, title) values (null, 
 org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "CORPUS VARCHAR(255)": "'JJjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj... (287)"
 Value too long for column "CORPUS VARCHAR(255)": "'JJjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj... (287)"; SQL statement:
 insert into regle (id, corpus, numordre, souscategorie_id, title) values (null, ?, ?, ?, ?) [22001-200]
+2020-06-08 14:24:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 3, 'Hors limites quand une route publique traverse le parcours',3,[*]'Quand une route publique traverse un parcours, elle est habituellement définie comme hors limites. Ceci peut rendre possible le fait qu’une balle jouée d’un côté de la route vienne reposer dans les limites de l’autre côté de la route, même si la balle serait hors limites si elle reposait sur la route elle-même."
+Syntax error in SQL statement "insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 3, 'Hors limites quand une route publique traverse le parcours',3,[*]'Quand une route publique traverse un parcours, elle est habituellement définie comme hors limites. Ceci peut rendre possible le fait qu’une balle jouée d’un côté de la route vienne reposer dans les limites de l’autre côté de la route, même si la balle serait hors limites si elle reposait sur la route elle-même."; SQL statement:
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 3, 'Hors limites quand une route publique traverse le parcours',3,'Quand une route publique traverse un parcours, elle est habituellement définie comme hors limites. Ceci peut rendre possible le fait qu’une balle jouée d’un côté de la route vienne reposer dans les limites de l’autre côté de la route, même si la balle serait hors limites si elle reposait sur la route elle-même. [42000-200]
+2020-06-08 14:24:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SI[*] LE COMITÉ PENSE QU’IL EST INÉQUITABLE OU DANGEREUX DE TRAITER CES SITUATIONS DIFFÉREMMENT, IL PEUT ADOPTER UNE RÈGLE LOCALE DISANT QU’UNE BALLE JOUÉE D’UN CÔTÉ DE LA ROUTE ET QUI VIENT REPOSER DE L’AUTRE CÔTÉ DE LA ROUTE EST HORS LIMITES."; attendu "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"
+Syntax error in SQL statement "SI[*] LE COMITÉ PENSE QU’IL EST INÉQUITABLE OU DANGEREUX DE TRAITER CES SITUATIONS DIFFÉREMMENT, IL PEUT ADOPTER UNE RÈGLE LOCALE DISANT QU’UNE BALLE JOUÉE D’UN CÔTÉ DE LA ROUTE ET QUI VIENT REPOSER DE L’AUTRE CÔTÉ DE LA ROUTE EST HORS LIMITES."; expected "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+Si le Comité pense qu’il est inéquitable ou dangereux de traiter ces situations différemment, il peut adopter une Règle locale disant qu’une balle jouée d’un côté de la route et qui vient reposer de l’autre côté de la route est hors limites. [42001-200]
+2020-06-08 14:24:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "SI[*] UNE ROUTE TRAVERSE UN TROU PARTICULIER OÙ LES JOUEURS DOIVENT JOUER D’UN CÔTÉ À L’AUTRE DANS LE COURS NORMAL DU JEU, LE COMITÉ DEVRAIT SPÉCIFIER QUE CETTE RÈGLE LOCALE NE S’APPLIQUE PAS À CETTE ROUTE DANS LE JEU DU TROU."; attendu "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"
+Syntax error in SQL statement "SI[*] UNE ROUTE TRAVERSE UN TROU PARTICULIER OÙ LES JOUEURS DOIVENT JOUER D’UN CÔTÉ À L’AUTRE DANS LE COURS NORMAL DU JEU, LE COMITÉ DEVRAIT SPÉCIFIER QUE CETTE RÈGLE LOCALE NE S’APPLIQUE PAS À CETTE ROUTE DANS LE JEU DU TROU."; expected "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+Si une route traverse un trou particulier où les joueurs doivent jouer d’un côté à l’autre dans le cours normal du jeu, le Comité devrait spécifier que cette Règle Locale ne s’applique pas à cette route dans le jeu du trou. [42001-200]
+2020-06-08 14:24:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "[*]', 1)"
+Syntax error in SQL statement "[*]', 1)"; SQL statement:
+', 1) [42000-200]
+2020-06-08 15:00:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "TITLE VARCHAR(255)": "STRINGDECODE('Balle provisoire pour une balle dans une zone \u00e0 p\u00e9nalit\u00e9'',3,''Selon la R\u00e8gle 18.3, un joueur ... (1192)"
+Value too long for column "TITLE VARCHAR(255)": "STRINGDECODE('Balle provisoire pour une balle dans une zone \u00e0 p\u00e9nalit\u00e9'',3,''Selon la R\u00e8gle 18.3, un joueur ... (1192)"; SQL statement:
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 8, 'Balle provisoire pour une balle dans une zone à pénalité'',3,''Selon la Règle 18.3, un joueur n’est pas autorisé à jouer provisoirement une balle si on est sûr ou quasiment certain que sa balle est dans une zone à pénalité.Cependant, dans des cas particuliers, la dimension, la configuration ou la localisation d’une zone à pénalité peut être telle que :•	Le joueur ne peut pas voir si la balle est dans la zone à pénalité,•	Cela retarderait le jeu de manière déraisonnable si le joueur devait aller vers l’avant pour chercher la balle avant de revenir jouer une autre balle selon la pénalité de coup et distance, et•	Si la balle d’origine n’est pas trouvée, il serait sûr ou quasiment certain que la balle est dans la zone à pénalité.Dans de telles situations, pour gagner du temps, un Comité peut choisir de modifier la Règle 18.3 :•	La Règle 18.3a est modifiée pour permettre au joueur de jouer provisoirement une balle selon la Règle 17.1 d( I ), la Règle 17.1 d(2) ou, pour une zone à pénalité rouge, la Règle 17. Id(3).•	Les Règles 18.3b et 18.3c sont modifiées pour indiquer quand une telle balle provisoire doit ou peut être jouée ou abandonnée, comme indiqué dans le Règle locale type.',3,'',2) [22001-200]
+2020-06-08 15:05:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Le nombre de colonnes ne correspond pas
+Column count does not match; SQL statement:
+insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUES ( 8, 'Balle provisoire pour une balle dans une zone à pénalité',3,'Selon la Règle 18.3, un joueur n’est pas autorisé à jouer provisoirement une balle si on est sûr ou quasiment certain que sa balle est dans une zone à pénalité.Cependant, dans des cas particuliers, la dimension, la configuration ou la localisation d’une zone à pénalité peut être telle que :•	Le joueur ne peut pas voir si la balle est dans la zone à pénalité,•	Cela retarderait le jeu de manière déraisonnable si le joueur devait aller vers l’avant pour chercher la balle avant de revenir jouer une autre balle selon la pénalité de coup et distance, et•	Si la balle d’origine n’est pas trouvée, il serait sûr ou quasiment certain que la balle est dans la zone à pénalité.Dans de telles situations, pour gagner du temps, un Comité peut choisir de modifier la Règle 18.3 :•	La Règle 18.3a est modifiée pour permettre au joueur de jouer provisoirement une balle selon la Règle 17.1 d( I ), la Règle 17.1 d(2) ou, pour une zone à pénalité rouge, la Règle 17. Id(3).•	Les Règles 18.3b et 18.3c sont modifiées pour indiquer quand une telle balle provisoire doit ou peut être jouée ou abandonnée, comme indiqué dans le Règle locale type.',3,'',2) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:439)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:492)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:180)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:135)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:156)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:314)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

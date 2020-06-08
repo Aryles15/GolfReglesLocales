@@ -12,6 +12,7 @@ public class SousCategorie {
     private Long id;
     private Integer numordre;
     private String title;
+    @Column(length = 20000)
     private String objet;
 
     @ManyToOne

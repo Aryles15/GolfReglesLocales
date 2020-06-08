@@ -13,7 +13,7 @@
             <#list categories as categorie>
                 <li class="list-group-item active">
                     <div class="row">
-                        <h2>${categorie.code}"."${categorie.title}</h2>
+                        <h2>${categorie.code}.${categorie.title}</h2>
                         <input value="Afficher / Masquer" type="button" class="btn btn-success" onclick="AfficherMasquerCateg(${categorie.id})"></input>
                     </div>
                 </li>
@@ -27,7 +27,7 @@
                     <#list categorie.getSousCategories() as souscat>
                         <li class="list-group-item">
                             <div class="row">
-                                <h3>${souscat.numordre}.${souscat.title}</h3>
+                                <h5>${categorie.code}.${souscat.numordre}.${souscat.title}</h5>
                                 <input value="Afficher/Masquer" type="button" class="btn btn-success" onclick="AfficherMasquerCateg(1${souscat.id})"></input>
                             </div>
                         </li>
@@ -37,11 +37,12 @@
                             <a href="/souscategoriedelete/${souscat.id}">Suprimer la Sous Categorie </a>
                             <a href="/newnextregle/${souscat.id}">Nouvelle Regles</a>
 
+                            <p>Objet: </br>${souscat.objet}</p>
                             <#list souscat.getRegles() as regles >
                                 <ul>
                                     <li class="list-group-item">
 
-                                        <h4>${regles.numordre}.${regles.corpus}</h4>
+                                        <h7>${categorie.code}.${souscat.numordre}-${regles.numordre}.${regles.corpus}</h7>
 
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="defaultUnchecked${regles.id}"
