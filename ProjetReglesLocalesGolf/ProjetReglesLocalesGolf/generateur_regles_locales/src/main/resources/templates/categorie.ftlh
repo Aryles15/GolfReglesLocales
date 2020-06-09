@@ -36,8 +36,10 @@
                             <a href="/changesouscateg/${souscat.id}">Changer titre Sous-rubriques</a>
                             <a href="/souscategoriedelete/${souscat.id}">Suprimer la Sous Categorie </a>
                             <a href="/newnextregle/${souscat.id}">Nouvelle Regles</a>
+                            <a href="/changesouscategobjet/${souscat.id}">Changer objet</a>
 
                             <p>Objet: </br>${souscat.objet}</p>
+
                             <#list souscat.getRegles() as regles >
                                 <ul>
                                     <li class="list-group-item">

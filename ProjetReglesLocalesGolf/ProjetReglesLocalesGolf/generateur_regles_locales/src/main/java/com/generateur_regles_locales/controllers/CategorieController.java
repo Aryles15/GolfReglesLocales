@@ -86,6 +86,28 @@ public class CategorieController {
 
     }
 
+    @RequestMapping(value = "/changesouscategobjet/{id}", method = RequestMethod.GET)
+    public String modifSousCategoriesObject(Model model, @PathVariable("id") Long id) {
+        SousCategorie souscateg = sousCategorieRepository.findById(id).get();
+        model.addAttribute("souscategorie", souscateg);
+        return "changesouscategorieobjet";
+    }
+
+    @RequestMapping(value = "/changesouscategorieobjet/{id}", method = RequestMethod.POST)
+    public String modifySousCategoriesObject(Model model, @PathVariable("id") Long id, @RequestParam("newobjet") String objet) {
+        SousCategorie souscateg = sousCategorieRepository.findById(id).get();
+        souscateg.setObjet(objet);
+        sousCategorieRepository.save(souscateg);
+
+        model.addAttribute("souscategories", souscateg);
+
+        return "redirect:/categories";// on respect le prg ,
+        // a chaque fois quon influe lapp ou bdd
+        //on redirige jamais sur la meme page
+
+
+    }
+
     @RequestMapping(value = "/newsouscateg/{id}", method = RequestMethod.GET)
     public String nextNewCategories(Model model, @PathVariable("id") Long id) {
         Categorie categ = categorieRepository.findById(id).get();
