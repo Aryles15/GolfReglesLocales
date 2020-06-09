@@ -7,6 +7,12 @@ body{
     margin-left:10%;
     margin-right:10%;
 }
+
+.divBienvenue{
+    text-align: center;
+    margin-top: 20%;
+}
+
 .ajoutcateg{
     text-align: center;
 }

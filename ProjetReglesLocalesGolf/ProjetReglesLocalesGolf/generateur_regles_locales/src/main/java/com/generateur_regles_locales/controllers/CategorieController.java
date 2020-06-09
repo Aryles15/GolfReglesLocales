@@ -57,7 +57,7 @@ public class CategorieController {
         categ.setTitle(newt);
         categ.setCode(newc);
         categorieRepository.save(categ);
-
+        //TODO Ajouter if(code exist ==> "Lettre deja existante ")
 
         return "redirect:/categories";
     }
@@ -89,20 +89,28 @@ public class CategorieController {
     @RequestMapping(value = "/newsouscateg/{id}", method = RequestMethod.GET)
     public String nextNewCategories(Model model, @PathVariable("id") Long id) {
         Categorie categ = categorieRepository.findById(id).get();
-
+        Categorie listsouscategorie = categorieRepository.findById(id).get();
+        Integer attributnumordre=listsouscategorie.getSousCategories().size()+1;
         model.addAttribute("categorie", categ);
+        model.addAttribute("incrementnumordre", attributnumordre);
+
 
         return "newsouscategorie";
     }
 
     @RequestMapping(value = "/newsouscategorie/{id}", method = RequestMethod.POST)
-    public String NewSousCategorie(Model model, @PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle) {
+        public String NewSousCategorie(@RequestParam ("newnumordre") Integer newnumordre,@PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle, @RequestParam("newobjet") String newobjet) {
         Categorie categ = categorieRepository.findById(id).get();
         SousCategorie souscateg = new SousCategorie();//new souscateg sur lid de la categorie
-        souscateg.setCategorie(categ);
-        souscateg.setTitle(newtitle);
-        sousCategorieRepository.save(souscateg);
 
+         //on set tous les attribut recupuerer et necessaire à l'affichage du template categorie
+        souscateg.setObjet(newobjet);
+        souscateg.setTitle(newtitle);
+        souscateg.setNumordre(newnumordre);
+        souscateg.setCategorie(categ);//on set la souscateg a la nouvelle categorie
+        categ.getSousCategories().add(souscateg);//on ajoute a la categorie la nouvelle sous categ
+        categorieRepository.save(categ);//on save
+        sousCategorieRepository.save(souscateg);
 
         return "redirect:/categories";// on respect le prg ,
         // a chaque fois quon influe lapp ou bdd
@@ -138,21 +146,25 @@ public class CategorieController {
     @RequestMapping(value = "/newnextregle/{id}", method = RequestMethod.GET)
     public String nextRegles(Model model, @PathVariable("id") Long id) {
         SousCategorie souscateg = sousCategorieRepository.findById(id).get();
-
+        SousCategorie listregle = sousCategorieRepository.findById(id).get();
+        Integer attributnumordre=listregle.getRegles().size()+1;
         model.addAttribute("souscategorie", souscateg);
+        model.addAttribute("incrementnumordre", attributnumordre);
 
         return "newregle";
     }
 
 
     @RequestMapping(value = "/newregletexte/{id}", method = RequestMethod.POST)
-    public String NewRegle(Model model, @PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle) {
+    public String NewRegle(Model model, @PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle,@RequestParam ("newnumordre") Integer newnumordre,@RequestParam("newcorpus") String newcorpus) {
         SousCategorie souscateg = sousCategorieRepository.findById(id).get();
         Regle regle = new Regle();
-        regle.setSouscategorie(souscateg);
         regle.setCorpus(newtitle);
+        regle.setNumordre(newnumordre);
+        regle.setCorpus(newcorpus);
+        regle.setSouscategorie(souscateg);
+        sousCategorieRepository.save(souscateg);
         regleRepository.save(regle);
-
 
         return "redirect:/categories";// on respect le prg ,
         // a chaque fois quon influe lapp ou bdd
