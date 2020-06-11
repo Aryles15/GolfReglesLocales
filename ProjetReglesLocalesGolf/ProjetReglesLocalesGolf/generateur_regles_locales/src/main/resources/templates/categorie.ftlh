@@ -11,10 +11,10 @@
     <ul class="list-group">
         <form action="/regleselect" method="post">
             <#list categories as categorie>
-                <li class="list-group-item active">
-                    <div class="row">
-                        <h2>${categorie.code}.${categorie.title}</h2>
-                        <input value="Afficher / Masquer" type="button" class="btn btn-success" onclick="AfficherMasquerCateg(${categorie.id})"></input>
+                <li class=" divCategTitre list-group-item active">
+                    <div class="row" onclick="AfficherMasquerCateg(${categorie.id})">
+                        <h3>${categorie.code}.${categorie.title}</h3>
+                        <!--  <input value="Afficher / Masquer" type="button" class="btn btn-success" onclick="AfficherMasquerCateg(${categorie.id})"></input>-->
                     </div>
                 </li>
 
@@ -25,31 +25,42 @@
                     <a href="/categoriedelete/${categorie.id}">Suprimer la Categorie </a>
 
                     <#list categorie.getSousCategories() as souscat>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <h5>${categorie.code}.${souscat.numordre}.${souscat.title}</h5>
-                                <input value="Afficher/Masquer" type="button" class="btn btn-success" onclick="AfficherMasquerCateg(1${souscat.id})"></input>
-                            </div>
-                        </li>
+                        <ul>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <h5>${categorie.code}.${souscat.numordre}.${souscat.title}</h5>
+                                    <input value="Afficher/Masquer" type="button" class="btn btn-success"
+                                           onclick="AfficherMasquerCateg(1${souscat.id})"></input>
+                                </div>
+                            </li>
+                        </ul>
                         <div id="1${souscat.id}" class="divSousCateg" style="display:none;">
 
-                            <a href="/changesouscateg/${souscat.id}">Changer titre Sous-rubriques</a>
-                            <a href="/souscategoriedelete/${souscat.id}">Suprimer la Sous Categorie </a>
-                            <a href="/newnextregle/${souscat.id}">Nouvelle Regles</a>
-                            <a href="/changesouscategobjet/${souscat.id}">Changer objet</a>
+                            <ul>
+                                <li>
+                                    <a href="/changesouscateg/${souscat.id}">Changer titre Sous-rubriques</a>
+                                    <a href="/souscategoriedelete/${souscat.id}">Suprimer la Sous Categorie </a>
+                                    <a href="/newnextregle/${souscat.id}">Nouvelle Regles</a>
+                                    <a href="/changesouscategobjet/${souscat.id}">Changer objet</a>
 
-                            <p>Objet: </br>${souscat.objet}</p>
+                                    <p>Objet: </br>${souscat.objet}</p>
+                                </li>
+
+                            </ul>
 
                             <#list souscat.getRegles() as regles >
                                 <ul>
                                     <li class="list-group-item">
 
-                                        <h7>${categorie.code}.${souscat.numordre}-${regles.numordre}.${regles.corpus}</h7>
+                                        <h7>${categorie.code}.${souscat.numordre}-${regles.numordre}
+                                            .${regles.corpus}</h7>
 
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked${regles.id}"
+                                            <input type="checkbox" class="custom-control-input"
+                                                   id="defaultUnchecked${regles.id}"
                                                    name="idregles" value="${regles.id}">
-                                            <label class="custom-control-label" for="defaultUnchecked${regles.id}"></label>
+                                            <label class="custom-control-label"
+                                                   for="defaultUnchecked${regles.id}"></label>
                                         </div>
 
                                         <a href="/changeregle/${regles.id}">Editer la Regle</a>
@@ -62,7 +73,8 @@
                     </#list>
                 </div>
             </#list>
-            <button  class="btn btn-warning" type="submit">Ajout à la liste</button>
+
+            <button class="btn btn-warning" type="submit">Ajout à la liste</button>
         </form>
     </ul>
 

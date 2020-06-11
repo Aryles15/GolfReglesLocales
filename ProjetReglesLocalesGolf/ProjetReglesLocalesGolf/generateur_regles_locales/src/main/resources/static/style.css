@@ -12,22 +12,25 @@ body{
     text-align: center;
     margin-top: 20%;
 }
+.divCategTitre{
+    margin-top:2%;
+}
 
 .ajoutcateg{
     text-align: center;
 }
 
 .divCateg {
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-name: slideleft;
 }
 
 .divSousCateg {
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-name: slidebas;
 }
 
-/*KeyFrames Animation*/
+/*----------------KeyFrames Animation----------------*/
 @keyframes slideleft {
     from {
         margin-left: 100%;
@@ -44,7 +47,7 @@ body{
 @keyframes slidebas {
     from {
         margin-top: 100%;
-        width: 300%;
+        width: 100%;
     }
 
     to {
@@ -52,3 +55,9 @@ body{
         width: 100%;
     }
 }
+@keyframes bounce{
+    from {transform: translateY(+20px);}
+    to   {transform: translateY(-20px);}
+}
+
+/*----------------KeyFrames Animation----------------*/
