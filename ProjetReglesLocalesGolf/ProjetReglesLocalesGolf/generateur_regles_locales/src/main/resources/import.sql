@@ -5,10 +5,7 @@ insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 4, 'D', 'Grenn s' );
 insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 5, 'E', 'Procédures de dégagement	spécifiques	ou obligatoires' );
 insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 6, 'F', 'Conditions anormales du parcours et éléments partie intégrante' );
 insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 7, 'G', 'Restrictions à l’utilisation d’un équipement spécifique' );
-insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 8, 'H', 'Définir qui peut aider ou donner des conseils aux joueurs' );
-insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 9, 'I', 'Définir quand et où les joueurs peuvent s’entraîner' );
-insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 10, 'J', 'Procédures pour le mauvais temps et interruptions de jeu' );
-insert into PUBLIC.CATEGORIE (ID, CODE, TITLE) VALUES ( 11, 'K', 'Dispositions relatives à la cadence de jeu' );
+
 
 
 

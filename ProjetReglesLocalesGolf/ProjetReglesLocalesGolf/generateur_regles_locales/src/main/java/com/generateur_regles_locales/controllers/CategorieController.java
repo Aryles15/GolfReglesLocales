@@ -49,6 +49,16 @@ public class CategorieController {
 
     }
 
+    @RequestMapping(value = "/newcateg/{id}", method = RequestMethod.GET)
+    public String nextCategories(Model model, @PathVariable("id") Long id) {
+        Categorie categ = categorieRepository.findById(id).get();
+
+        model.addAttribute("categorie", categ);
+
+
+
+        return "newcategorie";
+    }
 
     @RequestMapping(value = "/newcategorie", method = RequestMethod.POST)
     public String NewCategorie(@RequestParam("NewNameTitle") String newt, @RequestParam("NewNameCode") String newc) {
