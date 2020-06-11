@@ -25,7 +25,7 @@
     </head>
     <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">R&A</a>
+        <a class="navbar-brand" href="https://www.randa.org" target="_blank">R&A</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,14 +35,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Rubriques</a>
+                    <a class="nav-link" href="/categories">Règles Locales</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Règles Locales</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Connexion</a>
+                    <a class="nav-link " href="#">Connexion</a>
                 </li>
             </ul>
         </div>
