@@ -12,7 +12,7 @@
             <#list categories as categorie>
 
                 <div class="categorieAll ">
-                    <div class="card row shadow p-1 mb-2 sm-white rounded "
+                    <div class="card row shadow p-1 mb-2 sm-white rounded titrecateg"
                          onclick="AfficherMasquerCateg(${categorie.id})">
                         <div class="card-body">
                             <h5>${categorie.code}.${categorie.title}</h5>
@@ -23,10 +23,12 @@
 
 
                     <div id="${categorie.id}" class="divCateg" style="display:none;">
-                        <a href="/changecateg/${categorie.id}" class="lienHref">Changer titre rubriques</a>
-                        <a href="/newcateg/${categorie.id}" class="lienHref">Nouvelle Rubriques</a>
-                        <a href="/newsouscateg/${categorie.id}" class="lienHref">Nouvelle Sous Rubrique</a>
-                        <a href="/categoriedelete/${categorie.id}" class="lienHref">Suprimer la Rubrique </a>
+                        <a href="/changecateg/${categorie.id}" role="button" class="btn btn-sm btn-outline-light lienHref">Changer titre rubriques</a>
+                        <a href="/newcateg/${categorie.id}" class="btn btn-sm btn-outline-light lienHref">Nouvelle Rubriques</a>
+                        <a href="/newsouscateg/${categorie.id}" class="btn btn-sm btn-outline-light lienHref">Nouvelle Sous Rubrique</a>
+                        <a href="/categoriedelete/${categorie.id}" class="btn btn-sm btn-outline-light lienHref">Suprimer la Rubrique </a>
+
+
                         <#list categorie.getSousCategories() as souscat>
                             <div class="card row shadow-sm p-1 mb-2 sm-white rounded titresouscateg"
                                  onclick="AfficherMasquerCateg(1${souscat.id})">
@@ -38,14 +40,14 @@
 
                             <div id="1${souscat.id}" class="divSousCateg " style="display:none;">
 
-                                <a href="/changesouscateg/${souscat.id}" class="lienHref">Changer titre
+                                <a href="/changesouscateg/${souscat.id}" class="btn btn-sm btn-outline-light lienHref">Changer titre
                                     Sous-Rubriques</a>
-                                <a href="/souscategoriedelete/${souscat.id}" class="lienHref">Suprimer la
+                                <a href="/souscategoriedelete/${souscat.id}" class="btn btn-sm btn-outline-light lienHref">Suprimer la
                                     Sous-Rubrique </a>
-                                <a href="/newnextregle/${souscat.id}" class="lienHref">Nouvelle Regle</a>
-                                <a href="/changesouscategobjet/${souscat.id}" class="lienHref">Changer l'objet</a>
+                                <a href="/newnextregle/${souscat.id}" class="btn btn-sm btn-outline-light lienHref">Nouvelle Regle</a>
+                                <a href="/changesouscategobjet/${souscat.id}" class="btn btn-sm btn-outline-light lienHref">Changer l'objet</a>
 
-                                <p>Objet: </br>${souscat.objet}</p>
+                                <!--<p>Objet: </br>${souscat.objet}</p>-->
 
 
                                 <#list souscat.getRegles() as regles >
@@ -63,8 +65,8 @@
                                                        for="defaultUnchecked${regles.id}"></label>
                                             </div>
 
-                                            <a href="/changeregle/${regles.id}" class="lienHref">Editer la Regle</a>
-                                            <a href="/regledelete/${regles.id}" class="lienHref">Suprimer la Regle </a>
+                                            <a href="/changeregle/${regles.id}" class="btn btn-sm btn-outline-muted lienHref">Editer la Regle</a>
+                                            <a href="/regledelete/${regles.id}" class="btn btn-sm btn-outline-muted lienHref">Suprimer la Regle </a>
 
                                         </div>
 
@@ -81,7 +83,7 @@
         </ul>
 
         <div class="fixedbutton">
-            <button class="btn btn-success" type="submit">Ajout à la liste</button>
+            <button class="btn btn-warning" type="submit">Ajout à la liste</button>
         </div>
     </form>
     <script type="text/javascript">

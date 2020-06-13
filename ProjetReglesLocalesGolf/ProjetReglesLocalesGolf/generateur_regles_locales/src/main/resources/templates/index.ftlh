@@ -1,7 +1,7 @@
 <#import "main.ftlh" as m>
 <@m.page title="">
 
-    <style>body {background-color: darkcyan;color: aliceblue;}</style>
+    <style>body {color: aliceblue;}</style>
 
     <div class="divBienvenue">
         <h1>Bienvenue</h1>

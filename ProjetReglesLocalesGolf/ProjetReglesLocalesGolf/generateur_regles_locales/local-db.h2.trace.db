@@ -5613,3 +5613,7 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-06-12 15:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "INSERT INTO PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 1, 1, '',1,'Le hors   limites est défini par la ligne entre les points au niveau du sol côté parcours des piquets blancs'[*] |CHR(10)| 'ou des poteaux de clôture. Le hors limites est aussi défini par [insérer la description d’autres méthodes pour définir un hors limites]' )"
+Syntax error in SQL statement "INSERT INTO PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 1, 1, '',1,'Le hors   limites est défini par la ligne entre les points au niveau du sol côté parcours des piquets blancs'[*] |CHR(10)| 'ou des poteaux de clôture. Le hors limites est aussi défini par [insérer la description d’autres méthodes pour définir un hors limites]' )"; SQL statement:
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 1, 1, '',1,'Le hors   limites est défini par la ligne entre les points au niveau du sol côté parcours des piquets blancs' |CHR(10)| 'ou des poteaux de clôture. Le hors limites est aussi défini par [insérer la description d’autres méthodes pour définir un hors limites]' ) [42000-200]

@@ -78,7 +78,32 @@ class GenerateurReglesLocalesApplicationTests {
 
 
 	}
+	/*
+	@Test
+	@Transactional
+	void ajoututilisateur() {
+		JpaUserService JDS =new JpaUserService();
+		JDS.setGroupDao(roleRepository);
+		JDS.setUserDao(utilisateurRepository);
+		JDS.setbCryptPasswordEncoder(new BCryptPasswordEncoder());
+		Utilisateur user1 = new Utilisateur();
+		user1.setMail("admin@test.fr");
+		assertThat(roleRepository.count()).isEqualTo(3);
+		List<Role> roles= (List<Role>) roleRepository.findAll();
+		for (Role r: roles
+		) {
+			System.out.println("id du role ="+r.getId()+" nom du role "+r.getName());
+		}
+		Role admin= roleRepository.findById(1L).get();
+		assertThat(admin.getName()).isEqualTo("Admin");
 
-
-
+		user1.setName("Dolly Prane");
+		user1.setPassword("admin");
+		JDS.save(user1);
+		admin.getUsers().add(user1);
+		roleRepository.save(admin);
+		Utilisateur test1=utilisateurRepository.findById(1L).get();
+		System.out.println(" insert into PUBLIC.UTILISATEUR (ID, ACTIVE, MAIL, NAME, PASSWORD) VALUES ("+test1.getId()+","+false+","+test1.getMail()+","+test1.getName()+","+test1.getPassword()+");");
+	}
+*/
 }

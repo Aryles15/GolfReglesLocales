@@ -64,16 +64,33 @@ insert into PUBLIC.SOUS_CATEGORIE (ID, TITLE,NUMORDRE, OBJET,CATEGORIE_ID) VALUE
 
 
 
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 1, 1, '',1,'Le hors limites est défini par la ligne entre les points au niveau du sol côté parcours des piquets blancs ou des poteaux de clôture. Le hors limites est aussi défini par [insérer la description d’autres méthodes pour définir un hors limites]' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 1, 1, '',1,'Le hors   limites est défini par la ligne entre les points au niveau du sol côté parcours des piquets blancs ou des poteaux de clôture. Le hors limites est aussi défini par [insérer la description d’autres méthodes pour définir un hors limites]' );
 insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 2, 2, '',1,'Les limites du [spécifier le numéro du trou] sont définies par [insérer la description de l’élément].' );
 insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 3, 3, '',1,'La limite à gauche du [spécifier le numéro du trou] est définie par le bord, côté parcours, des points peints en blanc sur [spécifier la localisation, comme la chaussée].' );
 insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 4, 4, '',1,'La limite à droite du [spécifier le numéro du trou] est définie par le bord, côté parcours, de la ligne blanche peinte sur [nom de la route].' );
 insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 5, 5, '',1,'L’aire de maintenance entre [spécifier les numéros des trous] est hors limites. La limite est définie par le bord interne des poteaux de clôture entourant la zone.' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 6, 1, 'Règle locale type ',2,'« La bordure côté parcours de tout mur [bordure côté parcours d’une route] définit la limite du parcours. »' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 7, 2, 'Règle locale type ',2,'« Une balle est hors limites quand elle est au-delà de tout mur définissant les limites du parcours. »' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 8, 1, 'Règle locale type ',3,'« Une balle venant au repos sur ou au-delà de la route [identifier la route ou les trous où elle intervient dans le jeu] est hors limites, même si elle vient au repos sur une autre partie du parcours qui est en jeu pour les autres trous. »' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 9, 1, 'Règle locale type ',4,' ' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 10, 1, 'Règle locale type ',5,' ' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 11, 1, 'Règle locale type ',6,'Toutes les zones de désert sont des zones à pénalité rouges et la lisière de la zone à pénalité est la jonction entre le gazon et le désert.' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 12, 2, 'Règle locale type ',6,'Toutes les zones de lave sont des zones à pénalité rouges' );
-insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 13, 3, 'Règle locale type ',6,'Quand un mur artificiel entoure le bord d’un lac ou une autre étendue d’eau, la zone à pénalité est définie par le bord externe du mur.' );
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 6, 1, '',2,'« La bordure côté parcours de tout mur [bordure côté parcours d’une route] définit la limite du parcours. »' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 7, 2, ' ',2,'« Une balle est hors limites quand elle est au-delà de tout mur définissant les limites du parcours. »' );
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 8, 1, '',3,'« Une balle venant au repos sur ou au-delà de la route [identifier la route ou les trous où elle intervient dans le jeu] est hors limites, même si elle vient au repos sur une autre partie du parcours qui est en jeu pour les autres trous. »' );
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 9, 1, '',4,'Quand les limites sont définies par des piquets :« Durant le jeu de [spécifier le numéro du trou], le [décrire la partie du parcours] sur le[spécifier la localisation ou le côté] du trou, défini par [spécifier la couleur des piquets, parexemple, piquets blancs], est hors limites.Ces piquets sont considérés comme des éléments de limite durant le jeu de [spécifier lenuméro du trou]. Pour tous les autres trous, ce sont des obstructions inamovibles. »' );
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 10, 1, '',5,'Lorsqu''une frontière est définie par identifier la frontière, par exemple, une ligne blanche peinte au sol, des piquets blancs avec des sommets noirs ont été placés pour la visibilité. Ces enjeux décrivent tout marquage spécial sont inamovibles | obstructions mobiles. ' );
+
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 11, 1, '',6,'Pour le jeu de [spécifier le numéro du trou] la zone à pénalité jaune sur [spécifier le numérod’un autre trou] doit être jouée comme une zone à pénalité rouge.' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 12, 2, '',6,'La zone à pénalité sur le [spécifier le numéro du trou] s’étend jusqu’au hors limites et coïncide avec sa lisière.' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 13, 3, '',6,'La zone à pénalité rouge du [spécifier le numéro du trou] définie sur un seul côté, s’étend àl’infini.' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 14, 4, '',6,'Toutes les zones de désert sont des zones à pénalité rouges et la lisière de la zone à pénalité est la jonction entre le gazon et le désert.' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 15, 5, '',6,'Toutes les zones de lave sont des zones à pénalité rouges' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 16, 6, '',6,'Quand un mur artificiel entoure le bord d’un lac ou une autre étendue d’eau, la zone à pénalité est définie par le bord externe du mur.' );
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 17, 1, '',7,'Quand la balle d’un joueur est dans une zone à pénalité, y compris quand on est sûr ou quasiment certain qu’elle est dans une zone à pénalité même si elle n’est pas trouvée, lejoueur peut se dégager en utilisant une des options selon la Règle 17.1 d. Ou, quand la balle a franchi en dernier la lisière de la zone à pénalité rouge sur [spécifierle numéro du trou et sa position], comme option de dégagement supplémentaire avec un coupde pénalité, le joueur peut dropper la balle d’origine ou une autre balle sur le côté opposé dela zone à pénalité' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 18, 2, '',7,'Cette Règle Locale s’applique quand la balle d’un joueur est trouvée ou quand on est sûr ou quasiment certain qu’elle repose dans toute zone à pénalité rouge qui coïncide avec la limite du parcours et que le point où la balle a franchi en dernier la lisière de la zone à pénalitéest du côté de la limite du parcours de cette zone à pénalité.' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 19, 3, '',7,'En jouant la balle provisoire, le joueur peut utiliser l’option de dégagement coup et distance (voir Règle 17.1 d(I ), l’option de dégagement en arrière sur la ligne (voir Règle 17.1 d(2) ou, s’il s’agit d’une zone à pénalité rouge, l’option de dégagement latéral (voir Règle 17.1 d(3)). Si une dropping zone (voir Règle locale type E-1 ) est disponible pour cette zone à pénalité, le joueur peut aussi utiliser cette option de dégagement. Lorsque le joueur a joué une balle provisoire selon cette Règle, il ne peut plus utiliser aucune option selon la Règle 17.1 en relation avec la balle d’origine.' );
+
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 20, 1, '',8,'' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 21, 2, '',8,'' );
+insert into PUBLIC.REGLE (ID,NUMORDRE, TITLE, SOUSCATEGORIE_ID,CORPUS) VALUES ( 22, 3, '',8,'' );

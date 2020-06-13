@@ -19,6 +19,15 @@ public class CategorieController {
     @Autowired
     private RegleRepository regleRepository;
 
+
+
+
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String seconnecter(Model model) {
+        return "connexion";
+    }
+
     @RequestMapping("/categories")
     public String categories(Model model) {
         List<Categorie> categories = categorieRepository.findAll();
@@ -54,7 +63,6 @@ public class CategorieController {
         Categorie categ = categorieRepository.findById(id).get();
 
         model.addAttribute("categorie", categ);
-
 
 
         return "newcategorie";
@@ -122,7 +130,7 @@ public class CategorieController {
     public String nextNewCategories(Model model, @PathVariable("id") Long id) {
         Categorie categ = categorieRepository.findById(id).get();
         Categorie listsouscategorie = categorieRepository.findById(id).get();
-        Integer attributnumordre=listsouscategorie.getSousCategories().size()+1;
+        Integer attributnumordre = listsouscategorie.getSousCategories().size() + 1;
         model.addAttribute("categorie", categ);
         model.addAttribute("incrementnumordre", attributnumordre);
 
@@ -131,11 +139,11 @@ public class CategorieController {
     }
 
     @RequestMapping(value = "/newsouscategorie/{id}", method = RequestMethod.POST)
-        public String NewSousCategorie(@RequestParam ("newnumordre") Integer newnumordre,@PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle, @RequestParam("newobjet") String newobjet) {
+    public String NewSousCategorie(@RequestParam("newnumordre") Integer newnumordre, @PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle, @RequestParam("newobjet") String newobjet) {
         Categorie categ = categorieRepository.findById(id).get();
         SousCategorie souscateg = new SousCategorie();//new souscateg sur lid de la categorie
 
-         //on set tous les attribut recupuerer et necessaire à l'affichage du template categorie
+        //on set tous les attribut recupuerer et necessaire à l'affichage du template categorie
         souscateg.setObjet(newobjet);
         souscateg.setTitle(newtitle);
         souscateg.setNumordre(newnumordre);
@@ -179,7 +187,7 @@ public class CategorieController {
     public String nextRegles(Model model, @PathVariable("id") Long id) {
         SousCategorie souscateg = sousCategorieRepository.findById(id).get();
         SousCategorie listregle = sousCategorieRepository.findById(id).get();
-        Integer attributnumordre=listregle.getRegles().size()+1;
+        Integer attributnumordre = listregle.getRegles().size() + 1;
         model.addAttribute("souscategorie", souscateg);
         model.addAttribute("incrementnumordre", attributnumordre);
 
@@ -188,7 +196,7 @@ public class CategorieController {
 
 
     @RequestMapping(value = "/newregletexte/{id}", method = RequestMethod.POST)
-    public String NewRegle(Model model, @PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle,@RequestParam ("newnumordre") Integer newnumordre,@RequestParam("newcorpus") String newcorpus) {
+    public String NewRegle(Model model, @PathVariable("id") Long id, @RequestParam("NewTitle") String newtitle, @RequestParam("newnumordre") Integer newnumordre, @RequestParam("newcorpus") String newcorpus) {
         SousCategorie souscateg = sousCategorieRepository.findById(id).get();
         Regle regle = new Regle();
         regle.setCorpus(newtitle);

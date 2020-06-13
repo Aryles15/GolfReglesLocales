@@ -3,13 +3,18 @@ STYLE CSS
 
 */
 
-
 body {
-    background-color: ghostwhite;
-    color: black;
     margin-bottom: 10%;
 }
 
+.navbar-brand{
+    margin-left: 7%;
+}
+
+#navbarNav{
+    color: black;
+    margin-left: 50%;
+}
 /*.allbody-exeptedNavBar {
     margin-left: 10%;
     margin-right: 10%;
@@ -118,3 +123,15 @@ body {
         width: 100%;
     }
 }
+/*
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}*/
