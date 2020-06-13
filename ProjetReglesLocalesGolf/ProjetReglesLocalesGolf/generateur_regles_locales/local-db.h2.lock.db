@@ -1,6 +1,6 @@
 #FileLock
-#Sat Jun 13 18:26:12 CEST 2020
-hostName=host.docker.internal
-id=172ae80b8029d06c2c720669d41b8ef018213e07a35
+#Sat Jun 13 18:51:41 CEST 2020
+hostName=macbook-pro-2.home
+id=172ae981458bca5365b9f7a525615d01668f6818600
 method=file
-server=192.168.0.17\:60174
+server=192.168.30.16\:53185

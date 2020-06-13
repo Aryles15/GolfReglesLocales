@@ -5,6 +5,7 @@
     <div class="DivTitreTopPage">
         <h1 class="TitreTopPage">R & A</h1>
         <h3 class="SousTitreTopPage">Liste des rubriques</h3>
+        <span><a href="/connexion">Se connecter</a></span>
     </div>
 
     <form action="/regleselect" method="post">

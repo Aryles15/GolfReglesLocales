@@ -23,7 +23,7 @@ public class CategorieController {
 
 
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/connexion", method = RequestMethod.GET)
     public String seconnecter(Model model) {
         return "connexion";
     }
